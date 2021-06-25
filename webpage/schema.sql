@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS email;
+
+CREATE TABLE email (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    emailAddress VARCHAR(320) UNIQUE
+    );
+
