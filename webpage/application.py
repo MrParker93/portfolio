@@ -37,3 +37,8 @@ def blog():
 def achievements():
     # Display achievements page
     return render_template("achievements.html")
+
+@bp.route("/contact")
+def contact():
+    # Display contact form
+    return render_template("contact.html")
