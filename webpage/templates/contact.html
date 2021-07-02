@@ -1,10 +1,47 @@
 {% extends "layout.html" %}
 
-{% block title %} Get In Touch {% endblock %}
+{% block title %} Contact Me {% endblock %}
 
 {% block content %}
 
-    <h4 id="about" class="mt-5 pt-5">GET IN TOUCH .</h4>
-    <form
+    {% if success %}
+        <h5 class="pgrph mt-5 mb-5">Thank you for your message. I'll get back to you shortly.</h5>
+    {% else %}
 
+    <h4 class="hdr mt-5 pt-5">GET IN TOUCH .</h4>
+
+    {% for message in form.name.errors %}
+      <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    {% for message in form.email.errors %}
+      <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    {% for message in form.subject.errors %}
+      <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    {% for message in form.message.errors %}
+      <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    <form action="{{ url_for('application.contact') }}" method="POST" novalidate>
+        {{ form.hidden_tag() }}
+
+        {{ form.name.label }}
+        {{ form.name }}
+
+        {{ form.email.label }}
+        {{ form.email }}
+
+        {{ form.subject.label }}
+        {{ form.subject }}
+
+        {{ form.message.label }}
+        {{ form.message }}
+
+        {{ form.submit }}
+    </form>
+    {% endif %}
 {% endblock %}
