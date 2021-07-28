@@ -1,0 +1,280 @@
+{% extends "public/templates/public_template.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block main %}
+<!-- Feature 2 -->
+<section class="feature_2 bg-light pb-45 text-center">
+    <div class="container px-xl-0">
+        <!-- Welcome -->
+        <span class="d-inline-flex justify-content-center welcome pt-200 pb-200 sp-15" data-aos-duration="1000"
+            data-aos="fade-down" data-aos-delay="600" id="w">W</span>
+        <span class="d-inline-flex justify-content-center welcome pt-200 pb-200 sp-15" data-aos-duration="1000"
+            data-aos="fade-down" data-aos-delay="600" id="e">e</span>
+        <span class="d-inline-flex justify-content-center welcome pt-200 pb-200 sp-15" data-aos-duration="1000"
+            data-aos="fade-down" data-aos-delay="600" id="l">l</span>
+        <span class="d-inline-flex justify-content-center welcome pt-200 pb-200 sp-15" data-aos-duration="1000"
+            data-aos="fade-down" data-aos-delay="600" id="c">c</span>
+        <span class="d-inline-flex justify-content-center welcome pt-200 pb-200 sp-15" data-aos-duration="1000"
+            data-aos="fade-down" data-aos-delay="600" id="o">o</span>
+        <span class="d-inline-flex justify-content-center welcome pt-200 pb-200 sp-15" data-aos-duration="1000"
+            data-aos="fade-down" data-aos-delay="600" id="m">m</span>
+        <span class="d-inline-flex justify-content-center welcome pt-200 pb-200 sp-15" data-aos-duration="1000"
+            data-aos="fade-down" data-aos-delay="600" id="e2">e</span>
+        <div class="row justify-content-center">
+            <div class="col-xl-8 col-lg-10">
+                <h2 class="mt-15 small" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">Bio.</h2>
+                <div class="mt-15 mb-80 f-22 color-heading text-adaptive" data-aos-duration="600" data-aos="fade-down"
+                    data-aos-delay="300">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                </div>
+            </div>
+            <div class="col-xl-10">
+                <div class="row justify-content-center">
+                    <div class="mb-50 col-md-4 col-sm-8" data-aos-duration="600" data-aos="fade-down"
+                        data-aos-delay="600">
+                        <div class="mb-20 f-18 medium title">For Freelancers and <br />Agencies</div>
+                        <div class="color-heading text-adaptive">
+                            Pay once and it’s yours forever. Use <br />
+                            it to build as many sites as you <br />
+                            need; long form, presentations, <br />
+                            splash sites, and more.
+                        </div>
+                        <a href="#" class="mt-30 btn sm w-40 border-transparent-main"><i
+                                class="fas fa-angle-right"></i></a>
+                    </div>
+                    <div class="mb-50 col-md-4 col-sm-8" data-aos-duration="600" data-aos="fade-down"
+                        data-aos-delay="900">
+                        <div class="mb-20 f-18 medium title">Cmd + C / Cmd + V</div>
+                        <div class="color-heading text-adaptive">
+                            Edit content in a comfortable <br />
+                            manner. It’s as simple as copy <br />
+                            and paste.
+                        </div>
+                        <a href="#" class="mt-30 btn sm w-40 border-transparent-main"><i
+                                class="fas fa-angle-right"></i></a>
+                    </div>
+                    <div class="mb-50 col-md-4 col-sm-8" data-aos-duration="600" data-aos="fade-down"
+                        data-aos-delay="1200">
+                        <div class="mb-20 f-18 medium title">Full Control</div>
+                        <div class="color-heading text-adaptive">
+                            Easily change and tweak your <br />
+                            content when you need to, <br />
+                            however you want. No more third <br />
+                            party vendor lock-in.
+                        </div>
+                        <a href="#" class="mt-30 btn sm w-40 border-transparent-main"><i
+                                class="fas fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Content 2 -->
+
+<section class="content_2 bg-light pt-105 pb-95">
+    <div class="container px-xl-0 text-center">
+        <div class="row justify-content-center">
+            <div data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
+                <h2 class="mt-15 mb-80 small">Let's Connect!</h2>
+            </div>
+        </div>
+        <div class="row justify-content-around">
+            <div class="col-md-2 col-sm-6 mb-60" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
+                <a href="https://twitter.com/iDevelop_" class="">
+                    <img src="{{ url_for('static', filename='i/twitter.png') }}" class="" alt="TWITTER" />
+                </a>
+            </div>
+            <div class="col-md-2 col-sm-6 mb-60" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
+                <a href="https://medium.com/@marcuseparker93" class="">
+                    <img src="{{ url_for('static', filename='i/medium.png') }}" class="" alt="MEDIUM" />
+                </a>
+            </div>
+            <div class="col-md-2 col-sm-6 mb-60" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
+                <a href="https://www.linkedin.com/in/marcus-parker-124b6b211/" class="">
+                    <img src="{{ url_for('static', filename='i/linkedin.png') }}" class="" alt="LINKEDIN" />
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Pricing Table 2 -->
+
+<section class="pricing_table_2 bg-light pt-105 pb-70 text-center">
+    <div class="container px-xl-0">
+        <h2 class="mt-15 mb-80 small" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">Technologies
+        </h2>
+        <div class="row justify-content-center no-gutters">
+            <div class="col-xl-10">
+                <div class="row justify-content-around">
+                    <div class="col-lg-2 col-md-5 col-sm-6 mb-70 mb-lg-0 block" data-aos-duration="600"
+                        data-aos="fade-down" data-aos-delay="300">
+                        <div class="f-21 title">PYTHON</div>
+                        <div class="mx-auto f-62 w-130 h-130 radius_full">
+                            <img src="{{ url_for('static', filename='i/python.png') }}" class="w-60 h-60 radius_full"
+                                alt="PYTHON" />
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-5 col-sm-6 mb-70 mb-lg-0 block" data-aos-duration="600"
+                        data-aos="fade-down" data-aos-delay="300">
+                        <div class="f-21 title">FLASK</div>
+                        <div class="mx-auto f-62 w-130 h-130 radius_full">
+                            <img src="{{ url_for('static', filename='i/flask.jpg') }}" class="w-60 h-60 radius_full"
+                                alt="FLASK" />
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-5 col-sm-6 mb-70 mb-lg-0 block" data-aos-duration="600"
+                        data-aos="fade-down" data-aos-delay="30040">
+                        <div class="f-21 title">MYSQL</div>
+                        <div class="mx-auto f-62 w-130 h-130 radius_full">
+                            <img src="{{ url_for('static', filename='i/mysql.png') }}" class="w-60 h-60" alt="MYSQL" />
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-5 col-sm-6 mb-70 mb-lg-0 block" data-aos-duration="600"
+                        data-aos="fade-down" data-aos-delay="400">
+                        <div class="f-21 title">PYCHARM</div>
+                        <div class="mx-auto f-62 w-130 h-130 radius_full">
+                            <img src="{{ url_for('static', filename='i/pycharm.png') }}" class="w-60 h-60"
+                                alt="PYCHARM" />
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-5 col-sm-6 mb-70 mb-lg-0 block" data-aos-duration="600"
+                        data-aos="fade-down" data-aos-delay="400">
+                        <div class="f-21 title">MAC OS</div>
+                        <div class="mx-auto f-62 w-130 h-130 radius_full">
+                            <img src="{{ url_for('static', filename='i/apple.png') }}" class="w-60 h-60" alt="MAC OS" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-around">
+                    <div class="col-lg-2 col-md-5 col-sm-6 mb-70 mb-lg-0 block" data-aos-duration="600"
+                        data-aos="fade-down" data-aos-delay="300">
+                        <div class="f-21 title">GITHUB</div>
+                        <div class="mx-auto f-62 w-130 h-130 radius_full">
+                            <img src="{{ url_for('static', filename='i/github.png') }}" class="w-60 h-60 radius_full"
+                                alt="GITHUB" />
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-5 col-sm-6 mb-70 mb-lg-0 block" data-aos-duration="600"
+                        data-aos="fade-down" data-aos-delay="300">
+                        <div class="f-21 title">GIT</div>
+                        <div class="mx-auto f-62 w-130 h-130 radius_full">
+                            <img src="{{ url_for('static', filename='i/git.png') }}" class="w-60 h-60 radius_full"
+                                alt="GIT" />
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-5 col-sm-6 mb-70 mb-lg-0 block" data-aos-duration="600"
+                        data-aos="fade-down" data-aos-delay="300">
+                        <div class="f-21 title">POWERSHELL</div>
+                        <div class="mx-auto f-62 w-130 h-130 radius_full">
+                            <img src="{{ url_for('static', filename='i/powershell.png') }}" class="w-60 h-60"
+                                alt="POWERSHELL" />
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-5 col-sm-6 mb-70 mb-lg-0 block" data-aos-duration="600"
+                        data-aos="fade-down" data-aos-delay="300">
+                        <div class="f-21 title">TERMINAL</div>
+                        <div class="mx-auto f-62 w-130 h-130 radius_full">
+                            <img src="{{ url_for('static', filename='i/terminal.png') }}" class="w-60 h-60"
+                                alt="TERMINAL" />
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-5 col-sm-6 mb-70 mb-lg-0 block" data-aos-duration="600"
+                        data-aos="fade-down" data-aos-delay="400">
+                        <div class="f-21 title">WINDOWS OS</div>
+                        <div class="mx-auto f-62 w-130 h-130 radius_full">
+                            <img src="{{ url_for('static', filename='i/windows.png') }}" class="w-60 h-60"
+                                alt="WINDOWS OS" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-around">
+                    <div class="col-lg-3 col-md-5 col-sm-6 mb-70 mb-lg-0 block" data-aos-duration="600"
+                        data-aos="fade-down" data-aos-delay="400">
+                        <div class="f-21 title">HTML5</div>
+                        <div class="mx-auto f-62 w-130 h-130 radius_full">
+                            <img src="{{ url_for('static', filename='i/html5.png') }}" class="w-60 h-60 radius_full"
+                                alt="HTML5" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-5 col-sm-6 mb-70 mb-lg-0 block" data-aos-duration="600"
+                        data-aos="fade-down" data-aos-delay="400">
+                        <div class="f-21 title">CSS</div>
+                        <div class="mx-auto f-62 w-130 h-130 radius_full">
+                            <img src="{{ url_for('static', filename='i/css.png') }}" class="w-60 h-60 radius_full"
+                                alt="CSS" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-5 col-sm-6 mb-70 mb-lg-0 block" data-aos-duration="600"
+                        data-aos="fade-down" data-aos-delay="400">
+                        <div class="f-21 title">JAVASCRIPT</div>
+                        <div class="mx-auto f-62 w-130 h-130 radius_full">
+                            <img src="{{ url_for('static', filename='i/javascript.png') }}"
+                                class="w-80 h-80 radius_full" alt="JAVASCRIPT" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-5 col-sm-6 mb-70 mb-lg-0 block" data-aos-duration="600"
+                        data-aos="fade-down" data-aos-delay="400">
+                        <div class="f-21 title">BOOTSTRAP</div>
+                        <div class="mx-auto f-62 w-130 h-130 radius_full">
+                            <img src="{{ url_for('static', filename='i/bootstrap.png') }}" class="w-60 h-60"
+                                alt="BOOTSTRAP" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Swiper -->
+<div class="netflix-slider pt-105">
+    <h2 class="text-center small pb-105" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">Podcasts I
+        Enjoy</h2>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            {% for podcasts in podcast %}
+            <div class="swiper-slide"><a href="{{ podcasts['link'] }}" class=""><img src="{{ podcasts['image'] }}"
+                        class="" alt="{{ podcasts['name'] }}" data-aos-duration="600" data-aos="fade-down"
+                        data-aos-delay="600"></a></div>
+            {% endfor %}
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</div>
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 4,
+        spaceBetween: 1,
+        slidesPerGroup: 2,
+        breakpoints: {
+            320: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+            },
+            480: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
+            640: {
+                slidesPerView: 4,
+                spaceBetween: 15,
+            },
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
+{% endblock %}
