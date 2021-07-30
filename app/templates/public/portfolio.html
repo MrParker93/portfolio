@@ -7,22 +7,119 @@
     <div class="container px-xl-0">
         <div class="row justify-content-center">
             <div class="col-xl-8 col-lg-10">
-                <h2 class="small" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">Projects.</h2>
-                <div class="mt-15 mb-25 f-22 color-heading text-adaptive" data-aos-duration="600" data-aos="fade-down"
+                <h2 class="small" >Projects.</h2>
+                <div class="mt-15 mb-25 f-22" data-aos-duration="600" data-aos="fade-down"
                     data-aos-delay="300">
-                    The most important part of the Startup Framework is the samples. The
-                    samples form a set of 20 usable pages you can use as is or you can
-                    add new blocks from UI Kit.
+                    My personal projects created using technologies such as: <b>Python, Flask, MySQL, JavaScript, HTML and CSS.</b>
                 </div>
             </div>
         </div>
+        <div class="card mb-3 mt-50" style="max-width:100%;" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
+            <div class="row g-0">
+                <div class="col-md-4 col-sm-6" >
+                <img src="{{ url_for('static', filename='i/website_preview.png') }}" class="img-fluid"
+                        alt="Personal website"/>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Portfolio Website</h5>
+                  <p class="card-text">A personal website created using Flask. The website is designed using Bootstrap, manages and stores emails received via the Contact 
+                      page using MySQL. The Spotify podcast playlist is implemented using the Spotfiy developer API and updates in real time.
+                  </p>
+                  <p class="card-text"><small class="text-muted">{{ name }}</small><br>
+                <small><a style="color:#0880c4;">https://github.com/MrParker93/portfolio.git</a></small></p>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="card mb-3 " style="max-width:100%;" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
+            <div class="row g-0">
+                <div class="col-md-4 col-sm-6" >
+                <img srcset="{{ url_for('static', filename='i/showcase_2_img_1@2x.jpg') }} 2x"
+                        src="{{ url_for('static', filename='i/showcase_2_img_1.jpg') }}" class="img-fluid   "
+                        alt=""/>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Project 2</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">{{ name }}</small></p>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="card mb-3 " style="max-width:100%;" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
+            <div class="row g-0">
+                <div class="col-md-4 col-sm-6" >
+                <img srcset="{{ url_for('static', filename='i/showcase_2_img_1@2x.jpg') }} 2x"
+                        src="{{ url_for('static', filename='i/showcase_2_img_1.jpg') }}" class="img-fluid   "
+                        alt=""/>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Project 3</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">{{ name }}</small></p>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="card mb-3 " style="max-width:100%;" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
+            <div class="row g-0">
+                <div class="col-md-4 col-sm-6" >
+                <img srcset="{{ url_for('static', filename='i/showcase_2_img_1@2x.jpg') }} 2x"
+                        src="{{ url_for('static', filename='i/showcase_2_img_1.jpg') }}" class="img-fluid   "
+                        alt=""/>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Project 4</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">{{ name }}</small></p>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="card mb-3 " style="max-width:100%;" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
+            <div class="row g-0">
+                <div class="col-md-4 col-sm-6" >
+                <img srcset="{{ url_for('static', filename='i/showcase_2_img_1@2x.jpg') }} 2x"
+                        src="{{ url_for('static', filename='i/showcase_2_img_1.jpg') }}" class="img-fluid   "
+                        alt=""/>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Project 5</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">{{ name }}</small></p>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="card mb-3 " style="max-width:100%;" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0" >
+            <div class="row g-0">
+                <div class="col-md-4 col-sm-6" >
+                <img srcset="{{ url_for('static', filename='i/showcase_2_img_1@2x.jpg') }} 2x"
+                        src="{{ url_for('static', filename='i/showcase_2_img_1.jpg') }}" class="img-fluid   "
+                        alt=""/>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Project 6</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">{{ name }}</small></p>
+                </div>
+              </div>
+            </div>
+        </div>
+        <h2 class="small pt-50 pb-50">More projects.</h3>
         <div class="row">
-            <div class="col-md-4 col-sm-6" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
+            <div class="col-md-4 col-sm-6" >
                 <a href="#" class="mt-50 link color-main">
                     <img srcset="{{ url_for('static', filename='i/showcase_2_img_1@2x.jpg') }} 2x"
                         src="{{ url_for('static', filename='i/showcase_2_img_1.jpg') }}" class="radius10 img-fluid"
                         alt="" />
-                    <div class="mt-20 mb-15 f-22 title">In the Sky</div>
+                    <div class="mt-20 mb-15 f-22 title">Personal Website Using Flask</div>
                     <div class="color-heading f-14 semibold text-uppercase sp-20">{{ name }}</div>
                 </a>
             </div>
@@ -44,7 +141,7 @@
                     <div class="color-heading f-14 semibold text-uppercase sp-20">{{ name }}</div>
                 </a>
             </div>
-            <div class="col-md-4 col-sm-6" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
+            <div class="col-md-4 col-sm-6" >
                 <a href="#" class="mt-50 link color-main">
                     <img srcset="{{ url_for('static', filename='i/showcase_2_img_4@2x.jpg') }} 2x"
                         src="{{ url_for('static', filename='i/showcase_2_img_4.jpg') }}" class="radius10 img-fluid"

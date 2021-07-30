@@ -1,11 +1,15 @@
 import os
+import pprint
 import string
 import random
 import spotipy
 
 from app import app
+from functions import random_str_generator, send_message
 
-from flask import render_template, request, flash
+from flask import render_template, request, flash, redirect
+from flask_mail import Mail
+from flask_mysqldb import MySQL
 
 from datetime import date, timedelta
 from spotipy.oauth2 import SpotifyOAuth
@@ -18,12 +22,6 @@ my_info = {
     "profession": "Software Engineer"
 }
 
-
-# Generate random string
-def random_str_generator(size=15, chars=string.ascii_letters + string.digits):
-    return ''.join(random.SystemRandom().choice(chars) for _ in range(size))
-
-
 # Authenticate spotify account
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=os.environ["SPOTIPY_CLIENT_ID"],
                                                client_secret=os.environ["SPOTIPY_CLIENT_SECRET"],
@@ -32,6 +30,13 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=os.environ["SPOTIPY_CLI
                                                scope="user-read-playback-position"),
                      requests_session=True
                      )
+
+
+# Create mail object
+mail = Mail(app)
+
+# Create MYSQL object
+mysql = MySQL(app)
 
 # List of routes
 app_routes = [
@@ -73,7 +78,7 @@ def portfolio():
     # Title of page
     title = "Portfolio"
 
-    return render_template("public/portfolio.html", title=title, random_link=random.choice(app_routes))
+    return render_template("public/portfolio.html", title=title, name=my_info["name"], random_link=random.choice(app_routes))
 
 
 @app.route("/contact", methods=["GET", "POST"])
@@ -85,30 +90,57 @@ def contact():
     # User reached route via POST method
     if request.method == "POST":
 
+        req = request.form
+
         # Collect data from form
-        name = request.form["name"]
-        email = request.form["email"]
-        subject = request.form["subject"]
-        message = request.form["message"]
+        name = req["name"]
+        email = req["email"]
+        subject = req["subject"]
+        message = req["message"]
 
         # Check if the email is valid
         is_valid = validate_email(email)
 
         # Ensure all information is submitted
-        if not request.form["name"]:
-            flash("Please enter a name", category="error")
+        if not req["name"]:
+            flash("Please enter a name", "danger")
+            return redirect(request.url)
 
-        elif not request.form["subject"]:
-            flash("Please enter a subject", category="error")
+        if not req["email"]:
+            flash("Please enter an email", "danger")
+            return redirect(request.url)
 
-        elif not request.form["message"]:
-            flash("Please include a message", category="error")
+        if not is_valid:
+            flash("Please enter a valid email address", "danger")
+            return redirect(request.url)
 
-        if not request.form["email"]:
-            flash("Please enter an email", category="error")
+        if not req["subject"]:
+            flash("Please enter a subject", "danger")
+            return redirect(request.url)
 
-        elif not is_valid:
-            flash("Please enter a valid email address", category="error")
+        if not req["message"]:
+            flash("Please include a message", "danger")
+            return redirect(request.url)
+
+        
+         # Send the email to my email address
+        send_message(req, mail)
+
+        # Create a cursor to traverse the database
+        cursor = mysql.connection.cursor()
+
+        # Store MySQL query in a variable
+        add_message_to_database = "INSERT INTO email (name, email, subject, message) VALUES (%s, %s, %s, %s)"
+
+        # Store all form data in a variable
+        form_info = (name, email, subject, message)
+
+        # Insert form information into database
+        cursor.execute(add_message_to_database, form_info)
+
+         # Commit the changes to the database and close the connection
+        mysql.connection.commit()
+        cursor.close()
 
         return render_template("public/submit.html", title=title, random_link=random.choice(app_routes))
 
