@@ -5,9 +5,9 @@ import random
 import spotipy
 
 from app import app
-from functions import random_str_generator, send_message
+from app.functions import random_str_generator, send_message
 
-from flask import render_template, request, flash, redirect
+from flask import render_template, request, flash, redirect, g
 from flask_mail import Mail
 from flask_mysqldb import MySQL
 
@@ -22,21 +22,6 @@ my_info = {
     "profession": "Software Engineer"
 }
 
-# Authenticate spotify account
-sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=os.environ["SPOTIPY_CLIENT_ID"],
-                                               client_secret=os.environ["SPOTIPY_CLIENT_SECRET"],
-                                               redirect_uri=os.environ["SPOTIPY_REDIRECT_URI"],
-                                               state=random_str_generator(),
-                                               scope="user-read-playback-position"),
-                     requests_session=True
-                     )
-
-
-# Create mail object
-mail = Mail(app)
-
-# Create MYSQL object
-mysql = MySQL(app)
 
 # List of routes
 app_routes = [
@@ -48,6 +33,25 @@ app_routes = [
     "https://www.linkedin.com/in/marcus-parker-124b6b211/",
 ]
 
+# Create Mail object
+mail = Mail(app)
+
+# Create MySQL object
+mysql = MySQL(app)
+
+
+@app.before_first_request
+def setting_up_each_app_for_use():
+
+    # Connect and authenticate Spotify API for use
+    g.sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=os.environ["SPOTIPY_CLIENT_ID"],
+                                                     client_secret=os.environ["SPOTIPY_CLIENT_SECRET"],
+                                                     redirect_uri=os.environ["SPOTIPY_REDIRECT_URI"],
+                                                     state=random_str_generator(),
+                                                     scope="user-read-playback-position"),
+                           requests_session=True
+                           )
+
 
 @app.route("/")
 def index():
@@ -57,6 +61,8 @@ def index():
 
     # Create an empty list to store podcast images
     my_fave_podcast = []
+
+    sp = g.sp
 
     # Iterate over all currently saved episodes from my Spotify and add them to a list
     for episodes in range(len(sp.current_user_saved_episodes()) + 1):
@@ -102,11 +108,11 @@ def contact():
         is_valid = validate_email(email)
 
         # Ensure all information is submitted
-        if not req["name"]:
+        if not name:
             flash("Please enter a name", "danger")
             return redirect(request.url)
 
-        if not req["email"]:
+        if not email:
             flash("Please enter an email", "danger")
             return redirect(request.url)
 
@@ -114,16 +120,15 @@ def contact():
             flash("Please enter a valid email address", "danger")
             return redirect(request.url)
 
-        if not req["subject"]:
+        if not subject:
             flash("Please enter a subject", "danger")
             return redirect(request.url)
 
-        if not req["message"]:
+        if not message:
             flash("Please include a message", "danger")
             return redirect(request.url)
 
-        
-         # Send the email to my email address
+        # Send the email to my email address
         send_message(req, mail)
 
         # Create a cursor to traverse the database
@@ -138,7 +143,7 @@ def contact():
         # Insert form information into database
         cursor.execute(add_message_to_database, form_info)
 
-         # Commit the changes to the database and close the connection
+        # Commit the changes to the database and close the connection
         mysql.connection.commit()
         cursor.close()
 

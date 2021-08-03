@@ -18,18 +18,7 @@
         <div class="row">
             <!--Grid column-->
             <div class="col-md-9 mb-md-0 mb-5">
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <div class="container">
-                    {% for message in messages %}
-                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        <strong>{{ message }}</strong>
-                      </div>
-                    {% endfor %}
-                </div>
-                {% endif %}
-                {% endwith %}
+                <!--Include flash messages later-->
                 <form id="contact-form" name="contact-form" action="/contact" method="POST">
                     
                     <!--Grid row-->
@@ -89,8 +78,7 @@
                     <div class="text-md-left" data-aos-duration="600" data-aos="fade-down"
                         data-aos-delay="600">
                         <button class="mt-25 btn-fr action-1" type="submit" value="Submit">Send!</button>
-                    </div>
-                    <div class="status"></div>
+                        </div>
                 </form>
             </div>
             <!--Grid column-->
