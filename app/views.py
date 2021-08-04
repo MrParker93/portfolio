@@ -134,6 +134,7 @@ def contact():
         # Create a cursor to traverse the database
         cursor = mysql.connection.cursor()
 
+        
         # Store MySQL query in a variable
         add_message_to_database = "INSERT INTO email (name, email, subject, message) VALUES (%s, %s, %s, %s)"
 
