@@ -133,17 +133,16 @@ def contact():
 
         # Create a cursor to traverse the database
         cursor = mysql.connection.cursor()
-
         
         # Store MySQL query in a variable
         add_message_to_database = "INSERT INTO email (name, email, subject, message) VALUES (%s, %s, %s, %s)"
 
         # Store all form data in a variable
         form_info = (name, email, subject, message)
-
+        
         # Insert form information into database
         cursor.execute(add_message_to_database, form_info)
-
+        
         # Commit the changes to the database and close the connection
         mysql.connection.commit()
         cursor.close()
