@@ -72,7 +72,7 @@ def index():
                 "image": (sp.current_user_saved_episodes()["items"][episodes]["episode"]["images"][1]["url"]),
                 "link": (sp.current_user_saved_episodes()["items"][episodes]["episode"]["show"]["external_urls"]["spotify"])
             })
-        except IndexError as e:
+        except (IndexError, KeyError, AttributeError) as e:
             print(f"{e}")
 
     return render_template("public/index.html", title=title, podcast=my_fave_podcast, random_link=random.choice(app_routes))
